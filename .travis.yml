@@ -1,9 +1,9 @@
-language: go
-go:
-  - master
+dist: xenial
 
-install:
-  - go get github.com/gohugoio/hugo
+addons:
+  snaps:
+    - name: hugo
+      channel: extended
 
 script:
   - hugo
@@ -20,4 +20,4 @@ deploy:
   github_token: $GITHUB_TOKEN
   email: $EMAIL
   name: $NAME
-  fqdn: harrydev.io
+  fqdn: blog.harrydev.io
