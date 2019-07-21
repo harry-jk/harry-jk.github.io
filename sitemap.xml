@@ -3,17 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.harrydev.io/categories/</loc>
-    <priority>0</priority>
+    <loc>https://blog.harrydev.io/posts/story/2019/07/blog_restart/</loc>
+    <lastmod>2019-07-22T00:30:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.harrydev.io/</loc>
+    <lastmod>2019-07-22T00:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.harrydev.io/posts/</loc>
+    <lastmod>2019-07-22T00:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.harrydev.io/tags/</loc>
+    <lastmod>2019-07-22T00:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.harrydev.io/tags/blog/</loc>
+    <lastmod>2019-07-22T00:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.harrydev.io/tags/story/</loc>
+    <lastmod>2019-07-22T00:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.harrydev.io/categories/</loc>
     <priority>0</priority>
   </url>
   

@@ -6,9 +6,28 @@
     <description>Recent content in Tags on Harry&#39;s Dev Story</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
+    <lastBuildDate>Mon, 22 Jul 2019 00:30:00 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.harrydev.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>blog</title>
+      <link>https://blog.harrydev.io/tags/blog/</link>
+      <pubDate>Mon, 22 Jul 2019 00:30:00 +0900</pubDate>
+      
+      <guid>https://blog.harrydev.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>story</title>
+      <link>https://blog.harrydev.io/tags/story/</link>
+      <pubDate>Mon, 22 Jul 2019 00:30:00 +0900</pubDate>
+      
+      <guid>https://blog.harrydev.io/tags/story/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

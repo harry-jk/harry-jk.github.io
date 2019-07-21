@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Harry&#39;s Dev Story</title>
-    <link>https://blog.harrydev.io/</link>
-    <description>Recent content on Harry&#39;s Dev Story</description>
+    <title>blog on Harry&#39;s Dev Story</title>
+    <link>https://blog.harrydev.io/tags/blog/</link>
+    <description>Recent content in blog on Harry&#39;s Dev Story</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 22 Jul 2019 00:30:00 +0900</lastBuildDate>
     
-	<atom:link href="https://blog.harrydev.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.harrydev.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
