@@ -1,0 +1,23 @@
+language: go
+go:
+  - master
+
+install:
+  - go get github.com/gohugoio/hugo
+
+script:
+  - hugo
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  keep_history: true
+  repo: jhkang/jhkang.github.io
+  target_branch: master
+  on:
+    branch: develop
+  local_dir: public
+  github_token: $GITHUB_TOKEN
+  email: $EMAIL
+  name: $NAME
+  fqdn: harrydev.io
