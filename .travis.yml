@@ -1,5 +1,9 @@
 dist: xenial
 
+branches:
+  only:
+    - develop
+
 addons:
   snaps:
     - name: hugo
