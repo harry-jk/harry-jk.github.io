@@ -6,10 +6,24 @@
     <description>Recent content in story on Harry&#39;s Dev Story</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 22 Jul 2019 00:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jul 2019 23:10:00 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.harrydev.io/tags/story/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Blog Setup] 1.블로그를 새로 시작하며.. (이전에는?)</title>
+      <link>https://blog.harrydev.io/posts/story/2019/07/why_rebuilt_a_blog/</link>
+      <pubDate>Tue, 23 Jul 2019 23:10:00 +0900</pubDate>
+      
+      <guid>https://blog.harrydev.io/posts/story/2019/07/why_rebuilt_a_blog/</guid>
+      <description>블로그를 새롭게 설정하면서 했던 부분들을 정리해 보려고 한다.
+​
+이전에는 Naver Blog를 지나 Tistory에서 몇개의 글을 적고..
+GitHub Page로 넘어와 Jekyll를 TravisCI를 이용하여 사용하고 있었다. 글은 하나밖에 없었지만..
+기본적으로 GitHub Page에서 제공하는 Jekyll는 몇가지 Plugin만을 제공하고 있었고 그래서 TravisCI를 통해서 Build하고 Publish하는 방법으로 사용을 하고 있었다.
+source &#39;https://rubygems.org&#39; gem &#39;jekyll&#39;, &#39;~&amp;gt; 3.2.0&#39; gem &#39;jekyll-sitemap&#39; gem &#39;jekyll-multiple-languages&#39; gem &#39;jekyll-paginate&#39; gem &#39;wdm&#39;, &#39;&amp;gt;= 0.1.0&#39; if Gem.win_platform? gem &#39;octopress&#39; gem &#39;jekyll-gist&#39; gem &#39;fast-stemmer&#39; gem &#39;classifier-reborn&#39; gem &#39;rouge&#39; gem &#39;html-proofer&#39;, &#39;~&amp;gt; 2.</description>
+    </item>
     
     <item>
       <title>Blog Restart</title>
