@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>story on Harry&#39;s Dev Story</title>
-    <link>https://harrydev.io/tags/story/</link>
+    <link>https://blog.harrydev.io/tags/story/</link>
     <description>Recent content in story on Harry&#39;s Dev Story</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 24 Jul 2019 00:10:00 +0900</lastBuildDate>
     
-	<atom:link href="https://harrydev.io/tags/story/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.harrydev.io/tags/story/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Blog Setup] 1.블로그를 새로 시작하며...</title>
-      <link>https://harrydev.io/posts/story/2019/07/restart_blog/</link>
+      <link>https://blog.harrydev.io/posts/story/2019/07/restart_blog/</link>
       <pubDate>Wed, 24 Jul 2019 00:10:00 +0900</pubDate>
       
-      <guid>https://harrydev.io/posts/story/2019/07/restart_blog/</guid>
+      <guid>https://blog.harrydev.io/posts/story/2019/07/restart_blog/</guid>
       <description>블로그를 새롭게 설정하면서 했던 부분들을 정리해 보려고 한다.
 ​
 이전에는 Naver Blog를 지나 Tistory에서 몇개의 글을 적고..
