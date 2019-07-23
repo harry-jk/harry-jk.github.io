@@ -1,4 +1,4 @@
-baseURL = "https://blog.harrydev.io"
+baseURL = "https://harrydev.io"
 googleAnalytics = "UA-38928641-2"
 languageCode = "ko-kr"
 title = "Harry's Dev Story"

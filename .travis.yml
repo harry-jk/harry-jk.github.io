@@ -24,4 +24,4 @@ deploy:
   github_token: $GITHUB_TOKEN
   email: $EMAIL
   name: $NAME
-  fqdn: blog.harrydev.io
+  fqdn: harrydev.io
