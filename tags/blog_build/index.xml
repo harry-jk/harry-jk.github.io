@@ -6,17 +6,17 @@
     <description>Recent content in blog_build on Harry&#39;s Dev Story</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 23 Jul 2019 23:10:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jul 2019 00:10:00 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.harrydev.io/tags/blog_build/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>[Blog Setup] 1.블로그를 새로 시작하며.. (이전에는?)</title>
-      <link>https://blog.harrydev.io/posts/story/2019/07/why_rebuilt_a_blog/</link>
-      <pubDate>Tue, 23 Jul 2019 23:10:00 +0900</pubDate>
+      <title>[Blog Setup] 1.블로그를 새로 시작하며...</title>
+      <link>https://blog.harrydev.io/posts/story/2019/07/restart_blog/</link>
+      <pubDate>Wed, 24 Jul 2019 00:10:00 +0900</pubDate>
       
-      <guid>https://blog.harrydev.io/posts/story/2019/07/why_rebuilt_a_blog/</guid>
+      <guid>https://blog.harrydev.io/posts/story/2019/07/restart_blog/</guid>
       <description>블로그를 새롭게 설정하면서 했던 부분들을 정리해 보려고 한다.
 ​
 이전에는 Naver Blog를 지나 Tistory에서 몇개의 글을 적고..
