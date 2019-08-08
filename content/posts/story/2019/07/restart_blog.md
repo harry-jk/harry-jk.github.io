@@ -99,4 +99,5 @@ env:
 
 ----
 
-— **Next** : [[Blog Setup] 2.](/posts/dev/2019/07/hugo_basic)
+— **Next** : [[Blog Setup] 2.](/posts/dev/2019/08/hugo_basic)
+
