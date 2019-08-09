@@ -1,12 +1,11 @@
 ---
 title: "[Blog Setup] 2.Hugo를 이용한 Static Page 생성"
-date: 2019-08-09T04:15:00+09:00
-draft: true
+date: 2019-08-09T12:30:00+09:00
+draft: false
 toc: false
 images:
 tags:
-  - static_page_generator
-  - blog_build
+  - static page generator
   - blog
   - hugo
 ---
@@ -17,9 +16,10 @@ tags:
 
 ​      
 
-먼저 설치를 해야하는데 다양하게 설치가 가능하다.
+먼저 설치를 해보도록 하자.
 
 ```shell
+# 설치를 위한 다양한 방법을 지원하고 있다.
 # brew를 이용하여 (mac, linux)
 $ brew install hugo
 # snap을 이용하여 (linux)
@@ -108,7 +108,7 @@ $ hugo server
 
 theme은 theme 디렉토리 하위에 위치하게 되며, config.toml에 어떤 theme을 사용할지 정의를  하게된다.
 
-혹은 `hugo server -t {theme}`으로 실행할때 어떠한 theme을 사용할지 지정 할 수도 있다
+혹은 `hugo server -t ananke`와 같이 실행할때 어떠한 theme을 사용할지 지정 할 수도 있다
 
 ​     
 
@@ -163,7 +163,7 @@ $ hugo
 $ ls public
 ```
 
-이제 생성된 `public`을 올려두면 끝이 난다.
+이제  `public` 디렉토리에 생성된 파일들을 올려두면 끝이 난다.
 
 ​    
 

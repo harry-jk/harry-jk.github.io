@@ -5,8 +5,7 @@ draft: false
 toc: false
 images:
 tags:
-  - static_page_generator
-  - blog_build
+  - static page generator
   - blog
   - story
 
