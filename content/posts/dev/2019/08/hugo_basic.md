@@ -18,7 +18,7 @@ tags:
 
 먼저 설치를 해보도록 하자.
 
-```sh
+```bash
 # 설치를 위한 다양한 방법을 지원하고 있다.
 # brew를 이용하여 (mac, linux)
 $ brew install hugo
@@ -54,7 +54,7 @@ extended version은 기본 버전에서 `Sass/SCSS` 프로세싱을 지원이 �
 
 설치가 끝났으면 이제 프로젝트를 생성해 보자.
 
-```sh
+```bash
 $ hugo new site my_blog
 Congratulations! Your new Hugo site is created in /home/~~/my_blog.
 ```
@@ -67,7 +67,7 @@ hugo에서 site, theme, content를 만들때는 항상 `new` command를 사용�
 
 바로 결과를 살펴보도록 하자.
 
-```sh
+```bash
 $ hugo server
 ...
                    | EN  
@@ -100,7 +100,7 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 
 사이트의 디자인은 theme을 통하여 할 수 있으며 이미 많은 분들이 만들어 두었으니 [여기서](https://themes.gohugo.io/)마음에 드는 theme을 받아서 사용을 해 보자. 
 
-```sh
+```bash
 $ git clone https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
 $ echo 'theme = "ananke"' >> config.toml
 $ hugo server
@@ -116,7 +116,7 @@ theme은 theme 디렉토리 하위에 위치하게 되며, config.toml에 어떤
 
 이제 뭔가 나오기 시작 하였으니 글을 써 보자.
 
-```sh
+```bash
 $ hugo new posts/start.md
 /home/~~~/my_blog/content/posts/start.md created
 $ echo "my first post" >> ./content/posts/start.md
@@ -129,7 +129,7 @@ $ hugo server
 
 그 이유는  새로 생성된 content가 draft상태이기 때문이다. 
 
-```sh
+```bash
 $ cat ./content/posts/start.md
 ---
 title: "Start"
@@ -144,7 +144,7 @@ my first post
 
 하지만 글을 쓰면서 잘 나오는지 확인을 해야하니 draft까지 빌드를 하도록 option을 주어야 한다. 
 
-```sh
+```bash
 $ hugo server -D
 # or $ hugo server --buildDrafts
 ```
@@ -155,7 +155,7 @@ $ hugo server -D
 
 하지만 우리는 github혹은 다른곳에 static page를 올릴 예정이므로 server가 아닌 generate를 해야 한다.
 
-```sh
+```bash
 $ hugo
 # publish할 글은 draft: false로 미리 설정 해두자.
 # draft포함하여 generate를 하려면 
