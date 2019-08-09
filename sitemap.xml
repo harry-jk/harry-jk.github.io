@@ -4,43 +4,48 @@
   
   <url>
     <loc>https://blog.harrydev.io/</loc>
-    <lastmod>2019-07-24T00:10:00+09:00</lastmod>
+    <lastmod>2019-08-09T12:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.harrydev.io/posts/</loc>
-    <lastmod>2019-07-24T00:10:00+09:00</lastmod>
+    <lastmod>2019-08-09T12:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.harrydev.io/tags/</loc>
-    <lastmod>2019-07-24T00:10:00+09:00</lastmod>
+    <lastmod>2019-08-09T12:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.harrydev.io/posts/dev/2019/08/hugo_basic/</loc>
+    <lastmod>2019-08-09T12:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.harrydev.io/tags/blog/</loc>
+    <lastmod>2019-08-09T12:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.harrydev.io/tags/hugo/</loc>
+    <lastmod>2019-08-09T12:30:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.harrydev.io/tags/static-page-generator/</loc>
+    <lastmod>2019-08-09T12:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.harrydev.io/posts/story/2019/07/restart_blog/</loc>
     <lastmod>2019-07-24T00:10:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.harrydev.io/tags/blog/</loc>
-    <lastmod>2019-07-24T00:10:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.harrydev.io/tags/blog_build/</loc>
-    <lastmod>2019-07-24T00:10:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.harrydev.io/tags/static_page_generator/</loc>
-    <lastmod>2019-07-24T00:10:00+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="">
+<meta name="description"
+    content="Hugo를 사용하기로 하였으니 간단한 사용법을 정리해 보려고 한다.
+사실 Hugo 사이트에 아주 잘 설명이 되어 있다.
+​
+먼저 설치를 해보도록 하자.
+# 설치를 위한 다양한 방법을 지원하고 있다. # brew를 이용하여 (mac, linux) $ brew install hugo # snap을 이용하여 (linux) $ snap install hugo # chocolatey를 이용하여 (windows) $ choco install hugo # source를 받아서 직접. $ git clone https://github.com/gohugoio/hugo.git &amp;amp;&amp;amp; \ cd hugo &amp;amp;&amp;amp; \ go install # 만일 Sass/SCSS를 사용할 예정이라면 &amp;gt; go install --tags extended # 혹은 binary 다운로드 : https://github." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://blog.harrydev.io/posts/dev/2019/08/hugo_basic/" />
+
+
+<title>
+    
+    [Blog Setup] 2.Hugo를 이용한 Static Page 생성 :: Harry&#39;s Dev Story 
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="theme-color" content="#252627"><meta itemprop="name" content="[Blog Setup] 2.Hugo를 이용한 Static Page 생성">
+<meta itemprop="description" content="Hugo를 사용하기로 하였으니 간단한 사용법을 정리해 보려고 한다.
+사실 Hugo 사이트에 아주 잘 설명이 되어 있다.
+​
+먼저 설치를 해보도록 하자.
+# 설치를 위한 다양한 방법을 지원하고 있다. # brew를 이용하여 (mac, linux) $ brew install hugo # snap을 이용하여 (linux) $ snap install hugo # chocolatey를 이용하여 (windows) $ choco install hugo # source를 받아서 직접. $ git clone https://github.com/gohugoio/hugo.git &amp;&amp; \ cd hugo &amp;&amp; \ go install # 만일 Sass/SCSS를 사용할 예정이라면 &gt; go install --tags extended # 혹은 binary 다운로드 : https://github.">
+
+
+<meta itemprop="datePublished" content="2019-08-09T12:30:00&#43;09:00" />
+<meta itemprop="dateModified" content="2019-08-09T12:30:00&#43;09:00" />
+<meta itemprop="wordCount" content="589">
+
+
+
+<meta itemprop="keywords" content="static page generator,blog,hugo," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.harrydev.io"/>
+
+<meta name="twitter:title" content="[Blog Setup] 2.Hugo를 이용한 Static Page 생성"/>
+<meta name="twitter:description" content="Hugo를 사용하기로 하였으니 간단한 사용법을 정리해 보려고 한다.
+사실 Hugo 사이트에 아주 잘 설명이 되어 있다.
+​
+먼저 설치를 해보도록 하자.
+# 설치를 위한 다양한 방법을 지원하고 있다. # brew를 이용하여 (mac, linux) $ brew install hugo # snap을 이용하여 (linux) $ snap install hugo # chocolatey를 이용하여 (windows) $ choco install hugo # source를 받아서 직접. $ git clone https://github.com/gohugoio/hugo.git &amp;&amp; \ cd hugo &amp;&amp; \ go install # 만일 Sass/SCSS를 사용할 예정이라면 &gt; go install --tags extended # 혹은 binary 다운로드 : https://github."/>
+
+
+
+
+<meta property="article:published_time" content="2019-08-09 12:30:00 &#43;0900 &#43;0900" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Harry&#39;s Dev Story</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://blog.harrydev.io/about">About</a></li><li><a href="https://blog.harrydev.io/posts">Post</a></li><li><a href="https://blog.harrydev.io/tags">Tag</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>3 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title"><a href="https://blog.harrydev.io/posts/dev/2019/08/hugo_basic/">[Blog Setup] 2.Hugo를 이용한 Static Page 생성</a></h1>
+
+            
+
+            <div class="post-content">
+                <p><code>Hugo</code>를 사용하기로 하였으니 간단한 사용법을 정리해 보려고 한다.</p>
+
+<p>사실 <a href="https://gohugo.io/getting-started/quick-start/">Hugo 사이트</a>에 아주 잘 설명이 되어 있다.</p>
+
+<p>​</p>
+
+<p>먼저 설치를 해보도록 하자.</p>
+
+<pre><code class="language-shell"># 설치를 위한 다양한 방법을 지원하고 있다.
+# brew를 이용하여 (mac, linux)
+$ brew install hugo
+# snap을 이용하여 (linux)
+$ snap install hugo
+# chocolatey를 이용하여 (windows)
+$ choco install hugo
+# source를 받아서 직접.
+$ git clone https://github.com/gohugoio/hugo.git &amp;&amp; \
+  cd hugo &amp;&amp; \
+  go install 
+  # 만일 Sass/SCSS를 사용할 예정이라면 &gt; go install --tags extended
+# 혹은 binary 다운로드 : https://github.com/gohugoio/hugo/releases
+# 그 외 다양한 package installer를 지원합니다. 
+# 	- https://gohugo.io/getting-started/installing
+</code></pre>
+
+<p>개인적으로는 source를 받아서 설치하는 방법으로 설치를 하였다.</p>
+
+<p>처음에는 잘 안보고 <code>--tags extened</code> 옵션을 안붙이고 설치를 했다가 애러가 나서 당황 했었다&hellip;</p>
+
+<blockquote>
+<p>error: failed to transform resource: TOCSS: failed to transform &ldquo;scss/main.scss&rdquo; (text/x-scss): this feature is not available in your current Hugo version, see <a href="https://goo.gl/YMrWcn">https://goo.gl/YMrWcn</a> for more information</p>
+</blockquote>
+
+<p>extended version은 기본 버전에서 <code>Sass/SCSS</code> 프로세싱을 지원이 추가된 버전으로 만약 Sass/SCSS를 사용한다면 반드시 extended version으로 설치하여야 한다.</p>
+
+<p>참고로 기본 installer로 설치한 버전의 경우 extended 버전이 아닐 수도 있다.</p>
+
+<p>(mac에서는 brew로 설치를 해본결과 extended 버전이며 linux에서 snap을 사용할 경우 extended 버전이 아니다. )</p>
+
+<p>​</p>
+
+<p>​</p>
+
+<p>설치가 끝났으면 이제 프로젝트를 생성해 보자.</p>
+
+<pre><code class="language-shell">$ hugo new site my_blog
+Congratulations! Your new Hugo site is created in /home/~~/my_blog.
+</code></pre>
+
+<p>hugo에서 site, theme, content를 만들때는 항상 <code>new</code> command를 사용하여 생성한다.</p>
+
+<p>프로젝트 생성은 이것으로 끝났다.</p>
+
+<p>​</p>
+
+<p>바로 결과를 살펴보도록 하자.</p>
+
+<pre><code class="language-shell">$ hugo server
+...
+                   | EN  
++------------------+----+
+  Pages            |  3  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     |  0  
+  Processed images |  0  
+  Aliases          |  0  
+  Sitemaps         |  1  
+  Cleaned          |  0  
+...
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+</code></pre>
+
+<p>실행을 하면 빌드 결과가 나오고  localhost주소가 나오게 된다.</p>
+
+<p>나와 있는 주소로 들어가면 아주 하얀 화면을 보게 될것이다. (성공적으로 빌드가 되었다.)</p>
+
+<blockquote>
+<p>어떤 페이지가 생성이 되었는지 확인 하려면 생성된 sitemap(<a href="http://localhost:1313/sitemap.xml">http://localhost:1313/sitemap.xml</a>) 에서 확인해 볼 수 있고, 그 외의 페이지로 접근 할 경우 404 Not Found 페이지로 넘어가게 된다.</p>
+
+<p>(확인하보면 <code>/</code>, <code>/categories</code> ,<code>/tags</code> 가 생성 된 것을 볼 수 있다.)</p>
+</blockquote>
+
+<p>​</p>
+
+<p>​</p>
+
+<p>성공적으로 사이트가 나오는것을 확인하였으니 사이트가 이쁘게 나오도록 만들어 보자.</p>
+
+<p>사이트의 디자인은 theme을 통하여 할 수 있으며 이미 많은 분들이 만들어 두었으니 <a href="https://themes.gohugo.io/">여기서</a>마음에 드는 theme을 받아서 사용을 해 보자.</p>
+
+<pre><code class="language-shell">$ git clone https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+$ echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml
+$ hugo server
+</code></pre>
+
+<p>theme은 theme 디렉토리 하위에 위치하게 되며, config.toml에 어떤 theme을 사용할지 정의를  하게된다.</p>
+
+<p>혹은 <code>hugo server -t ananke</code>와 같이 실행할때 어떠한 theme을 사용할지 지정 할 수도 있다</p>
+
+<p>​</p>
+
+<p>​</p>
+
+<p>이제 뭔가 나오기 시작 하였으니 글을 써 보자.</p>
+
+<pre><code class="language-shell">$ hugo new posts/start.md
+/home/~~~/my_blog/content/posts/start.md created
+$ echo &quot;my first post&quot; &gt;&gt; ./content/posts/start.md
+$ hugo server
+</code></pre>
+
+<p><code>hugo new</code>로 새로운 content를 생성 하고 내용으로 <code>my first post</code>라는 글을 작성하였다.</p>
+
+<p>하지만 server를 실행하면 빌드 결과가 동일하게 나오는 것을 볼 수 있을것이다.</p>
+
+<p>그 이유는  새로 생성된 content가 draft상태이기 때문이다.</p>
+
+<pre><code class="language-shell">$ cat ./content/posts/start.md
+---
+title: &quot;Start&quot;
+date: 2019-08-09T02:50:38+09:00
+draft: true
+---
+
+my first post
+</code></pre>
+
+<p>방금 작성한 content 내용을 확인해 보면 <code>draft: true</code>임을 확인 할 수 있고, 이 기능을 통해 publish하지 않을 아직 작성중인 글들을 관리할 수 있다.</p>
+
+<p>하지만 글을 쓰면서 잘 나오는지 확인을 해야하니 draft까지 빌드를 하도록 option을 주어야 한다.</p>
+
+<pre><code class="language-shell">$ hugo server -D
+# or $ hugo server --buildDrafts
+</code></pre>
+
+<p>이제 성공적으로 글이 보이기 시작할 것이다.</p>
+
+<p>​</p>
+
+<p>하지만 우리는 github혹은 다른곳에 static page를 올릴 예정이므로 server가 아닌 generate를 해야 한다.</p>
+
+<pre><code class="language-shell">$ hugo
+# publish할 글은 draft: false로 미리 설정 해두자.
+# draft포함하여 generate를 하려면 
+#	$ hugo -D
+$ ls public
+</code></pre>
+
+<p>이제  <code>public</code> 디렉토리에 생성된 파일들을 올려두면 끝이 난다.</p>
+
+<p>​</p>
+
+<p>다음은 TravisCI로 Generate를 하고 Github Page로 블로그를 서빙할 수 있도록 설정하는 법을 끄적여 보도록 하겠다.</p>
+
+<p>​</p>
+
+<hr />
+
+<p>— <strong>Prev</strong> : <a href="/posts/story/2019/07/restart_blog">[Blog Setup] 1.블로그를 새로 시작하며&hellip;</a></p>
+
+<p>— <strong>Next</strong>: TODO&hellip;</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.harrydev.io/tags/static-page-generator">static page generator</a></span><span class="tag"><a href="https://blog.harrydev.io/tags/blog">blog</a></span><span class="tag"><a href="https://blog.harrydev.io/tags/hugo">hugo</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>589 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-08-09 03:30 &#43;0000</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h">Read other posts</span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://blog.harrydev.io/posts/story/2019/07/restart_blog/">
+                                <span class="button__text">[Blog Setup] 1.블로그를 새로 시작하며...</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+            <span></span>
+            <span> <a href="https://blog.harrydev.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.4c3fb12a087ceed4a52cb5d57068a9795c7069617a01ca70f788052ad66e1791779e6c72686e1dc0ca13dc03b0203204b6566bb0dd1ee80de2b7ff4d8fe53db2.js" integrity="sha512-TD&#43;xKgh87tSlLLXVcGipeVxwaWF6Acpw94gFKtZuF5F3nmxyaG4dwMoT3AOwIDIEtlZrsN0e6A3it/9Nj&#43;U9sg=="></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-38928641-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
+    </body>
+</html>
