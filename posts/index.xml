@@ -133,7 +133,7 @@ deploy:
   # 만일 false이면 git stash --all 을 실행
   skip_cleanup: true
   # 커밋의 기록을 유지하고자 하면 true
-  # 기본은 false : git push --force
+  # 기본은 false : force push
   keep_history: true
   # 대상 repository
   repo: ${USERNAME}/${USERNAME}.github.io
