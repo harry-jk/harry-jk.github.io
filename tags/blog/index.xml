@@ -6,10 +6,23 @@
     <description>Recent content in blog on Harry&#39;s Dev Story</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 09 Aug 2019 12:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 03:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.harrydev.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기.</title>
+      <link>https://blog.harrydev.io/posts/dev/2019/08/deploy-blog-to-github-pages-with-travis/</link>
+      <pubDate>Mon, 12 Aug 2019 03:00:00 +0900</pubDate>
+      
+      <guid>https://blog.harrydev.io/posts/dev/2019/08/deploy-blog-to-github-pages-with-travis/</guid>
+      <description>지난 글에서 Hugo로 Static Page를 생성해 보았다.
+이제 다른 사람이 볼 수 있도록 웹에 서비스를 배포할 차례이다
+​
+이를 위해서는 다양한 방법이 존재 하며 원하는 방식으로 선택을 하면 된다.
+ 낮은 사양의 컴퓨터를 사용하여 개인 서버를 운영 하면서 서비스 AWS의 S3를 이용하여 서비스 ( + CloudFront를 연동) GCP의 CloudStorage를 이용하여 서비스 ( + Cloud Load Balancing(+ Cloud CDN)을 연동) Firebase를 이용하여 서비스 Heroku를 이용하여 서비스 Netlify를 이용하여 서비스 Github Pages를 이용하여 서비스 그 외&amp;hellip;  그 중 비용 생각 안해도 되고 Custom Domain연동에 HTTPS도 지원하는 Github Pages를 사용하도록 하겠다.</description>
+    </item>
     
     <item>
       <title>[Blog Setup] 2.Hugo를 이용한 Static Page 생성</title>
