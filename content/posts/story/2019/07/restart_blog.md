@@ -98,5 +98,5 @@ env:
 
 ----
 
-— **Next** : [[Blog Setup] 2.](/posts/dev/2019/08/hugo_basic)
+— **Next** : [[Blog Setup] 2.Hugo를 이용한 Static Page 생성](/posts/dev/2019/08/hugo_basic)
 

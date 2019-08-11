@@ -175,4 +175,5 @@ $ ls public
 
 — **Prev** : [[Blog Setup] 1.블로그를 새로 시작하며...](/posts/story/2019/07/restart_blog)
 
-— **Next**: TODO...
+— **Next** : [[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기.](/posts/dev/2019/08/deploy-blog-to-github-pages-with-travis)
+
