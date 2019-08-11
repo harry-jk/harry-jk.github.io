@@ -16,7 +16,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   keep_history: true
-  repo: jhkang/jhkang.github.io
+  repo: ${USERNAME}/${USERNAME}.github.io
   target_branch: master
   on:
     branch: develop
