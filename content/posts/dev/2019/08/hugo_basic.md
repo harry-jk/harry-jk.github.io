@@ -1,6 +1,7 @@
 ---
 title: "[Blog Setup] 2.Hugo를 이용한 Static Page 생성"
 date: 2019-08-09T12:30:00+09:00
+comments: true
 draft: false
 toc: false
 images:

@@ -1,5 +1,6 @@
 baseURL = "https://blog.harrydev.io"
 googleAnalytics = "UA-38928641-2"
+disqusShortname = "blog-harrydev-io"
 languageCode = "ko-kr"
 title = "Harry's Dev Story"
 theme = "hello-friend-ng"

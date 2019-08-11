@@ -1,6 +1,7 @@
 ---
 title: "[Blog Setup] 1.블로그를 새로 시작하며..."
 date: 2019-07-24T00:10:00+09:00
+comments: true
 draft: false
 toc: false
 images:

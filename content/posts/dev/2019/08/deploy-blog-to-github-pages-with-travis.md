@@ -1,6 +1,7 @@
 ---
 title: "[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기."
 date: 2019-08-12T03:00:00+09:00
+comments: true
 draft: false
 toc: false
 images:
