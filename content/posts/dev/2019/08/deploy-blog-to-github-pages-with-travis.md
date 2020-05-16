@@ -5,6 +5,10 @@ comments: true
 draft: false
 toc: false
 images:
+categories:
+  - CI/CD
+series:
+  - Github Page에 Hugo기반의 Blog 배포하기
 tags:
   - blog
   - hugo
