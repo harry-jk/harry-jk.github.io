@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Harry&#39;s Dev Story</title>
+    <link>https://blog.harrydev.io/categories/web/</link>
+    <description>Recent content in Web on Harry&#39;s Dev Story</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <copyright> &amp;#183; &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 09 Aug 2019 12:30:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://blog.harrydev.io/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Blog Setup] 2.Hugo를 이용한 Static Page 생성</title>
+      <link>https://blog.harrydev.io/posts/dev/2019/08/hugo_basic/</link>
+      <pubDate>Fri, 09 Aug 2019 12:30:00 +0900</pubDate>
+      
+      <guid>https://blog.harrydev.io/posts/dev/2019/08/hugo_basic/</guid>
+      <description>Hugo를 사용하기로 하였으니 간단한 사용법을 정리해 보려고 한다. 사실 Hugo 사이트에 아주 잘 설명이 되어 있다. ​ 먼저 설치를 해보도록 하자. # 설치를 위한 다양한</description>
+    </item>
+    
+  </channel>
+</rss>

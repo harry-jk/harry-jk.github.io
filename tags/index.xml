@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Harry&#39;s Dev Story</title>
@@ -6,6 +6,7 @@
     <description>Recent content in Tags on Harry&#39;s Dev Story</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
+    <copyright> &amp;#183; &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 12 Aug 2019 03:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.harrydev.io/tags/index.xml" rel="self" type="application/rss+xml" />
