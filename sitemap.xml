@@ -13,6 +13,16 @@
   </url>
   
   <url>
+    <loc>https://blog.harrydev.io/categories/</loc>
+    <lastmod>2019-08-12T03:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.harrydev.io/categories/code-pipeline/</loc>
+    <lastmod>2019-08-12T03:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.harrydev.io/tags/github-pages/</loc>
     <lastmod>2019-08-12T03:00:00+09:00</lastmod>
   </url>
@@ -58,11 +68,6 @@
   </url>
   
   <url>
-    <loc>https://blog.harrydev.io/categories/</loc>
-    <lastmod>2019-08-09T12:30:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.harrydev.io/tags/static-page-generator/</loc>
     <lastmod>2019-08-09T12:30:00+09:00</lastmod>
   </url>
@@ -85,10 +90,6 @@
   <url>
     <loc>https://blog.harrydev.io/tags/story/</loc>
     <lastmod>2019-07-24T00:10:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.harrydev.io/categories/ci/cd/</loc>
   </url>
   
 </urlset>
