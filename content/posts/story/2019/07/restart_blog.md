@@ -5,11 +5,14 @@ comments: true
 draft: false
 toc: false
 images:
+categories:
+  - Story
+series:
+  - Github Page에 Hugo기반의 Blog 배포하기
 tags:
   - static page generator
   - blog
   - story
-
 ---
 
 블로그를 새롭게 설정하면서 했던 부분들을 정리해 보려고 한다.
