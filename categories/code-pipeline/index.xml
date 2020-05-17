@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>ko</language><managingEditor>jinhyeok.kang@gmail.com (harry)</managingEditor>
             <webMaster>jinhyeok.kang@gmail.com (harry)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 12 Aug 2019 03:00:00 &#43;0900</lastBuildDate><atom:link href="https://blog.harrydev.io/categories/code-pipeline/" rel="self" type="application/rss+xml" /><item>
     <title>[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기.</title>
-    <link>https://blog.harrydev.io/deploy-blog-to-github-pages-with-travis/</link>
+    <link>https://blog.harrydev.io/2019/08/deploy-blog-to-github-pages-with-travis/</link>
     <pubDate>Mon, 12 Aug 2019 03:00:00 &#43;0900</pubDate>
     <author>Author</author>
-    <guid>https://blog.harrydev.io/deploy-blog-to-github-pages-with-travis/</guid>
+    <guid>https://blog.harrydev.io/2019/08/deploy-blog-to-github-pages-with-travis/</guid>
     <description><![CDATA[지난 글에서 Hugo로 Static Page를 생성해 보았다. 이제 다른 사람이 볼 수 있도록 웹에 서비스를 배포할 차례이다 ​ 이를 위해서는 다양한 방법이 존재 하며 원하는 방식]]></description>
 </item></channel>
 </rss>

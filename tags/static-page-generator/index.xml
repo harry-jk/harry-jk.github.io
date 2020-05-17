@@ -6,17 +6,17 @@
         <generator>Hugo -- gohugo.io</generator><language>ko</language><managingEditor>jinhyeok.kang@gmail.com (harry)</managingEditor>
             <webMaster>jinhyeok.kang@gmail.com (harry)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 09 Aug 2019 12:30:00 &#43;0900</lastBuildDate><atom:link href="https://blog.harrydev.io/tags/static-page-generator/" rel="self" type="application/rss+xml" /><item>
     <title>[Blog Setup] 2.Hugo를 이용한 Static Page 생성</title>
-    <link>https://blog.harrydev.io/hugo_basic/</link>
+    <link>https://blog.harrydev.io/2019/08/hugo_basic/</link>
     <pubDate>Fri, 09 Aug 2019 12:30:00 &#43;0900</pubDate>
     <author>Author</author>
-    <guid>https://blog.harrydev.io/hugo_basic/</guid>
+    <guid>https://blog.harrydev.io/2019/08/hugo_basic/</guid>
     <description><![CDATA[Hugo를 사용하기로 하였으니 간단한 사용법을 정리해 보려고 한다. 사실 Hugo 사이트에 아주 잘 설명이 되어 있다. ​ 먼저 설치를 해보도록 하자. 1 2 3 4 5 6 7 8 9]]></description>
 </item><item>
     <title>[Blog Setup] 1.블로그를 새로 시작하며...</title>
-    <link>https://blog.harrydev.io/restart_blog/</link>
+    <link>https://blog.harrydev.io/2019/07/restart_blog/</link>
     <pubDate>Wed, 24 Jul 2019 00:10:00 &#43;0900</pubDate>
     <author>Author</author>
-    <guid>https://blog.harrydev.io/restart_blog/</guid>
+    <guid>https://blog.harrydev.io/2019/07/restart_blog/</guid>
     <description><![CDATA[블로그를 새롭게 설정하면서 했던 부분들을 정리해 보려고 한다. ​ 이전에는 Naver Blog를 지나 Tistory에서 몇개의 글을 적고.. GitHub Page로 넘어와 Jek]]></description>
 </item></channel>
 </rss>
