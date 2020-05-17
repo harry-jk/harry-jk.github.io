@@ -510,11 +510,11 @@ disableHugoGeneratorInject = false
 
   # Social config in home page
   [params.social]
-    GitHub = "https://github.com/harry-jk"
-    Linkedin = "https://www.linkedin.com/in/jinhyeok"
-    Twitter = "https://twitter.com/harrydev_io"
+    GitHub = "harry-jk"
+    Linkedin = "jinhyeok"
+    Twitter = "harrydev_io"
     Instagram = ""
-    Facebook = "https://www.facebook.com/jinhyeok"
+    Facebook = "jinhyeok"
     Telegram = ""
     Medium = ""
     Gitlab = ""
@@ -529,7 +529,7 @@ disableHugoGeneratorInject = false
     Codepen = ""
     FreeCodeCamp = ""
     Bitbucket = ""
-    Stackoverflow = "https://stackoverflow.com/users/1229745/jinhyeok-kang"
+    Stackoverflow = "1229745/jinhyeok-kang"
     Weibo = ""
     Odnoklassniki = ""
     VK = ""
