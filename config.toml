@@ -28,21 +28,23 @@ disableSitemap = false
 disable404     = false
 disableHugoGeneratorInject = false
 
+preserveTaxonomyNames = true
+
 [author]
   name = "harry"
   email = "jinhyeok.kang@gmail.com"
 
 [taxonomies]
-    category = "categories"
-    tag      = "tags"
-    series   = "series"
+  category = "categories"
+  tag      = "tags"
+  series   = "series"
 
 [menu]
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about"
-   [[menu.main]]
+  [[menu.main]]
     identifier = "post"
     name = "Post"
     url = "/posts"
@@ -107,8 +109,8 @@ disableHugoGeneratorInject = false
 
 # Permalinks config (https://gohugo.io/content-management/urls/#permalinks)
 [Permalinks]
-  # posts = ":year/:month/:filename"
-  posts = ":filename"
+  posts = ":year/:month/:filename"
+  # posts = ":filename"
 
 # Privacy config (https://gohugo.io/about/hugo-and-gdpr/)
 [privacy]
