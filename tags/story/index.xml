@@ -1,25 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>story on Harry&#39;s Dev Story</title>
-    <link>https://blog.harrydev.io/tags/story/</link>
-    <description>Recent content in story on Harry&#39;s Dev Story</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
-    <copyright> &amp;#183; &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 24 Jul 2019 00:10:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://blog.harrydev.io/tags/story/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>[Blog Setup] 1.블로그를 새로 시작하며...</title>
-      <link>https://blog.harrydev.io/posts/story/2019/07/restart_blog/</link>
-      <pubDate>Wed, 24 Jul 2019 00:10:00 +0900</pubDate>
-      
-      <guid>https://blog.harrydev.io/posts/story/2019/07/restart_blog/</guid>
-      <description>블로그를 새롭게 설정하면서 했던 부분들을 정리해 보려고 한다. ​ 이전에는 Naver Blog를 지나 Tistory에서 몇개의 글을 적고.. GitHub Page로 넘어와 Jek</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>story - Tag - Harry&#39;s Dev Story</title>
+        <link>https://blog.harrydev.io/tags/story/</link>
+        <description>story - Tag - Harry&#39;s Dev Story</description>
+        <generator>Hugo -- gohugo.io</generator><language>ko</language><managingEditor>jinhyeok.kang@gmail.com (harry)</managingEditor>
+            <webMaster>jinhyeok.kang@gmail.com (harry)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 24 Jul 2019 00:10:00 &#43;0900</lastBuildDate><atom:link href="https://blog.harrydev.io/tags/story/" rel="self" type="application/rss+xml" /><item>
+    <title>[Blog Setup] 1.블로그를 새로 시작하며...</title>
+    <link>https://blog.harrydev.io/restart_blog/</link>
+    <pubDate>Wed, 24 Jul 2019 00:10:00 &#43;0900</pubDate>
+    <author>Author</author>
+    <guid>https://blog.harrydev.io/restart_blog/</guid>
+    <description><![CDATA[블로그를 새롭게 설정하면서 했던 부분들을 정리해 보려고 한다. ​ 이전에는 Naver Blog를 지나 Tistory에서 몇개의 글을 적고.. GitHub Page로 넘어와 Jek]]></description>
+</item></channel>
 </rss>

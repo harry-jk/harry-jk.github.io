@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기. - Harry&#39;s Dev Story</title><meta name="Description" content="Harry&#39;s Dev Story"><meta property="og:title" content="[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기." />
+<meta property="og:description" content="지난 글에서 Hugo로 Static Page를 생성해 보았다. 이제 다른 사람이 볼 수 있도록 웹에 서비스를 배포할 차례이다 ​ 이를 위해서는 다양한 방법이 존재 하며 원하는 방식" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.harrydev.io/deploy-blog-to-github-pages-with-travis/" />
+<meta property="og:image" content="https://blog.harrydev.io/logo.png"/>
+<meta property="article:published_time" content="2019-08-12T03:00:00+09:00" />
+<meta property="article:modified_time" content="2020-05-16T21:09:15+09:00" /><meta property="og:site_name" content="Harry&#39;s Dev Story" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.harrydev.io/logo.png"/>
+
+<meta name="twitter:title" content="[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기."/>
+<meta name="twitter:description" content="지난 글에서 Hugo로 Static Page를 생성해 보았다. 이제 다른 사람이 볼 수 있도록 웹에 서비스를 배포할 차례이다 ​ 이를 위해서는 다양한 방법이 존재 하며 원하는 방식"/>
+<meta name="application-name" content="Harry&#39;s Dev Story">
+<meta name="apple-mobile-web-app-title" content="Harry&#39;s Dev Story"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://blog.harrydev.io/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="https://blog.harrydev.io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://blog.harrydev.io/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://blog.harrydev.io/apple-touch-icon.png"><link rel="mask-icon" href="https://blog.harrydev.io/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="https://blog.harrydev.io/site.webmanifest"><link rel="canonical" href="https://blog.harrydev.io/deploy-blog-to-github-pages-with-travis/" /><link rel="prev" href="https://blog.harrydev.io/hugo_basic/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="https://blog.harrydev.io/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기.",
+        "inLanguage": "ko",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.harrydev.io\/deploy-blog-to-github-pages-with-travis\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.harrydev.io\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "blog, hugo, travis, github pages","wordcount":  2374 ,
+        "url": "https:\/\/blog.harrydev.io\/deploy-blog-to-github-pages-with-travis\/","datePublished": "2019-08-12T03:00:00+09:00","dateModified": "2020-05-16T21:09:15+09:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "Harry JinHyeok Kang",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.harrydev.io\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "harry"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="https://blog.harrydev.io/" title="Harry&#39;s Dev Story"><span class="header-title-pre"><i class='fas fa-terminal fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="https://blog.harrydev.io/about"> About </a><a class="menu-item" href="https://blog.harrydev.io/categories"> Category </a><a class="menu-item" href="https://blog.harrydev.io/posts"> Post </a><a class="menu-item" href="https://blog.harrydev.io/series"> Series </a><a class="menu-item" href="https://blog.harrydev.io/tags"> Tag </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="https://blog.harrydev.io/" title="Harry&#39;s Dev Story"><span class="header-title-pre"><i class='fas fa-terminal fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://blog.harrydev.io/about" title="">About</a><a class="menu-item" href="https://blog.harrydev.io/categories" title="">Category</a><a class="menu-item" href="https://blog.harrydev.io/posts" title="">Post</a><a class="menu-item" href="https://blog.harrydev.io/series" title="">Series</a><a class="menu-item" href="https://blog.harrydev.io/tags" title="">Tag</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기.</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://blog.harrydev.io/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>harry</a></span>&nbsp;
+                    <span class="post-category">included in<a href="https://blog.harrydev.io/categories/code-pipeline/">
+                                <i class="far fa-folder fa-fw"></i>Code Pipeline
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2019-08-12>2019-08-12</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;about 2374 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 min&nbsp;</div>
+        </div><div class="content" id="content"><p><a href="https://blog.harrydev.io/posts/dev/2019/08/hugo_basic" rel="">지난 글에서</a> Hugo로 Static Page를 생성해 보았다.</p>
+<p>이제 다른 사람이 볼 수 있도록 웹에 서비스를 배포할 차례이다</p>
+<p>​</p>
+<p>이를 위해서는 다양한 방법이 존재 하며 원하는 방식으로 선택을 하면 된다.</p>
+<ul>
+<li>낮은 사양의 컴퓨터를 사용하여 <code>개인 서버</code>를 운영 하면서 서비스</li>
+<li><code>AWS</code>의 <code>S3</code>를 이용하여 서비스 ( + <code>CloudFront</code>를 연동)</li>
+<li><code>GCP</code>의 <code>CloudStorage</code>를 이용하여 서비스 ( + <code>Cloud Load Balancing</code>(+ <code>Cloud CDN</code>)을 연동)</li>
+<li><code>Firebase</code>를 이용하여 서비스</li>
+<li><code>Heroku</code>를 이용하여 서비스</li>
+<li><code>Netlify</code>를 이용하여 서비스</li>
+<li><code>Github Pages</code>를 이용하여 서비스</li>
+<li>그 외&hellip;</li>
+</ul>
+<p>그 중 비용 생각 안해도 되고 Custom Domain연동에 HTTPS도 지원하는 Github Pages를 사용하도록 하겠다.</p>
+<p>(물론 다른 서비스들도 이 블로그 처럼 트레픽도 없고 사이즈도 작다면 대부분 무료 플렌으로 충분히 커버가 가능하다.)</p>
+<p>​</p>
+<p>어느 서비스를 통하여 블로그를 올릴지 정했으면, 이제 올려 보도록 하자.</p>
+<p><code>Github Pages</code>는 간단히 자신의 <code>Github</code>에 <code>{자신의 username}.github.io</code>로 <code>repository</code>를 생성하면 준비가 끝난다.</p>
+<p>​</p>
+<p>이제 해당 repository에 배포를 해보자</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 여기서 {username}은 github 계정이다. ex) example/example.github.io</span>
+$ git clone git@github.com:<span class="o">{</span>username<span class="o">}</span>/<span class="o">{</span>username<span class="o">}</span>.github.io.git blog
+$ <span class="nb">cd</span> blog
+<span class="c1"># 이미 내용이 있다면 삭제한 글이 남아있지 않도록 지워준다</span>
+$ rm -rf *
+<span class="c1"># 지난번에 generate한 결과물을 전부 복사해 온다.</span>
+$ cp -R ../my_blog/public/* ./
+$ git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s2">&#34;my first blog&#34;</span> <span class="o">&amp;&amp;</span> git push
+</code></pre></td></tr></table>
+</div>
+</div><p>이제 <code>http://{username}.github.io/</code>로 접속하면 올라간 것을 확인 할 수 있을 것이다.</p>
+<p>​</p>
+<p>하지만 매번 이렇게 수동으로 생성하고 배포 할 것인가.</p>
+<p>그냥 글을 쓰고 올리면 생성하고 배포까지 하도록 <code>Travis CI</code>를 이용하여 설정해 보자.</p>
+<p>​</p>
+<p>먼저 시작하기 전에 어떠한 방법으로 구성을 할 것인지 간단하게 알아보자.</p>
+<p>Github Pages는 몇가지 static page를 서비스 하기 위한 방법을 제공한다.</p>
+<ul>
+<li><code>{username}.github.io</code>로 생성된 repository에서는 <code>master</code> branch</li>
+<li><code>그 외</code>의 repository에서는 설정에 따라 <code>master</code> or <code>gh-pages</code> branch
+<ul>
+<li>master branch의 <code>/docs</code> 폴더로도 설정이 가능하다고 한다.</li>
+</ul>
+</li>
+</ul>
+<p>나는 <code>{username}.github.io</code>를 사용할 예정이므로 해당 repository의 <code>develop</code> branch에 hugo project를 올리고 <code>push</code>가 되면 Travis CI에서 static page generate를 시행한 뒤 <code>master</code> branch에 commit을 하여  <code>deploy</code>되도록 구성 할 것이다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># develop branch로 변경해준다.</span>
+$ git checkout -b develop
+<span class="c1"># 기존의 파일을 전부 지우고 만들었던 project를 전부 복사해 온다.</span>
+$ rm -rf * <span class="o">&amp;&amp;</span> cp -R ../my_blog/* ./
+<span class="c1"># public은 generate 결과이므로 ignore를 걸어둔다.</span>
+$ <span class="nb">echo</span> <span class="s2">&#34;public/&#34;</span> &gt;&gt; .gitignore
+$ git add .
+$ git commit -m <span class="s2">&#34;hugo project init&#34;</span> <span class="o">&amp;&amp;</span> git push
+</code></pre></td></tr></table>
+</div>
+</div><p>​</p>
+<p>프로젝트를 repository에 올려두었으니 이제 Travis 설정을 할 차례이다.</p>
+<p>Travis는 <code>.travis.yml</code>로 어떤 작업을 수행 할 것인지를 정의할 수 있다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># 어떠한 환경에서 진행할 것인지를 정한다. (Ubuntu 16.04 Xenial)</span><span class="w">
+</span><span class="w"></span><span class="k">dist</span><span class="p">:</span><span class="w"> </span>xenial<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c"># 어느 branch에 이벤트를 받아서 진행할 것인지 정한다. (develop branch에서만 진행함.) </span><span class="w">
+</span><span class="w"></span><span class="k">branches</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">only</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- develop<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c"># CI를 시작하기 전 필요한 addon을 설정할 수 있다.</span><span class="w">
+</span><span class="w"></span><span class="k">addons</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="c"># linux package manager중 snap을 사용할 것이며 hugo를 받으면서 channel option으로 extended를 주었다.</span><span class="w">
+</span><span class="w"></span><span class="c"># Sass/SCSS를 사용하지 않는다면 channel를 제외해도 무관하다.</span><span class="w">
+</span><span class="w"></span><span class="c"># $ sudo snap install hugo --channel=extended</span><span class="w">
+</span><span class="w">  </span><span class="k">snaps</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>hugo<span class="w">
+</span><span class="w">      </span><span class="k">channel</span><span class="p">:</span><span class="w"> </span>extended<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c"># 실행할 스크립트</span><span class="w">
+</span><span class="w"></span><span class="k">script</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="c"># draft는 generate 하지않을 것이므로 옵션없이 hugo 실행.</span><span class="w">
+</span><span class="w">  </span>- hugo<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c"># 생성 후 deploy를 하기위한 설정이다.</span><span class="w">
+</span><span class="w"></span><span class="k">deploy</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="c"># 여러가지 provider를 지원하고 있으며, 그 중 Github Pages를 사용</span><span class="w">
+</span><span class="w">  </span><span class="k">provider</span><span class="p">:</span><span class="w"> </span>pages<span class="w">
+</span><span class="w">  </span><span class="c"># 빌드 후 작업 dir을 stash할 것 인지를 나타낸다. (반드시 true로 설정.)</span><span class="w">
+</span><span class="w">  </span><span class="c"># 만일 false이면 git stash --all 을 실행</span><span class="w">
+</span><span class="w">  </span><span class="k">skip_cleanup</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">  </span><span class="c"># 커밋의 기록을 유지하고자 하면 true</span><span class="w">
+</span><span class="w">  </span><span class="c"># 기본은 false : force push</span><span class="w">
+</span><span class="w">  </span><span class="k">keep_history</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">  </span><span class="c"># 대상 repository</span><span class="w">
+</span><span class="w">  </span><span class="k">repo</span><span class="p">:</span><span class="w"> </span>${USERNAME}/${USERNAME}.github.io<span class="w">
+</span><span class="w">  </span><span class="c"># 대상 branch</span><span class="w">
+</span><span class="w">  </span><span class="k">target_branch</span><span class="p">:</span><span class="w"> </span>master<span class="w">
+</span><span class="w">  </span><span class="c"># 진행할 환경. (이미 위에서 설정을 하였기 때문에 건너 뛰어도 될 것 같다)</span><span class="w">
+</span><span class="w">  </span><span class="k">on</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">branch</span><span class="p">:</span><span class="w"> </span>develop<span class="w">
+</span><span class="w">  </span><span class="c"># 어느것을 올릴것인가 (hugo generate 결과 dir)</span><span class="w">
+</span><span class="w">  </span><span class="k">local_dir</span><span class="p">:</span><span class="w"> </span>public<span class="w">
+</span><span class="w">  </span><span class="c"># 해당 repository에 올리기 위한 github token</span><span class="w">
+</span><span class="w">  </span><span class="k">github_token</span><span class="p">:</span><span class="w"> </span>$GITHUB_TOKEN<span class="w">
+</span><span class="w">  </span><span class="c"># commit에 남길 email과 name (optional)</span><span class="w">
+</span><span class="w">  </span><span class="k">email</span><span class="p">:</span><span class="w"> </span>$EMAIL<span class="w">
+</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>$NAME<span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>아주 간단하게 이와 같이 정의가 된다.</p>
+<p><strong>여기서 나온 환경변수는 Travis CI 사이트에서 설정하는 값이니 넣지 않는다.</strong></p>
+<p>특히 <strong>GITHUB_TOKEN</strong>은 절대로 코드상에 넣지 않는다.</p>
+<p>​</p>
+<p><code>.travis.yml</code>을 추가 하였으면 commit/push를 해준다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ git add .travis.yml
+$ git commit -m <span class="s2">&#34;travis init&#34;</span> <span class="o">&amp;&amp;</span> git push
+</code></pre></td></tr></table>
+</div>
+</div><p>​</p>
+<p>​</p>
+<p>이제 <a href="https://travis-ci.org/" target="_blank" rel="noopener noreffer">Travis CI</a>를 들어가 Github으로 로그인을 해주자.</p>
+<p>로그인을 하면 public repository목록이 나오고 그 중에 <code>{username}.github.io</code> repository를 선택해서 들어간다.</p>
+<p>(만일 나오지 않는다면 <a href="https://travis-ci.org/%7Busername%7D/%7Busername%7D.github.io">https://travis-ci.org/{username}/{username}.github.io</a> 로 들어갈 수 있다)</p>
+<p><figure><a class="lightgallery" href="https://blog.harrydev.io/dev/travis/not-an-active-repository.png" title="not an active repository" data-thumbnail="/dev/travis/not-an-active-repository.png" data-sub-html="<h2>아직 활성화가 안되어 있다.</h2><p>not an active repository</p>">
+        <img
+            class="lazyload"
+            src="https://blog.harrydev.io/svg/loading/normal.min.svg"
+            data-src="https://blog.harrydev.io/dev/travis/not-an-active-repository.png"
+            data-srcset="https://blog.harrydev.io/dev/travis/not-an-active-repository.png, https://blog.harrydev.io/dev/travis/not-an-active-repository.png 1.5x, https://blog.harrydev.io/dev/travis/not-an-active-repository.png 2x"
+            data-sizes="auto"
+            alt="not an active repository" />
+    </a><figcaption class="image-caption">아직 활성화가 안되어 있다.</figcaption>
+    </figure></p>
+<p><code>Activate repotository</code>를 눌러 활성화를 해주자!</p>
+<p>​</p>
+<p>활성화가 되었다면 <code>More Options</code> &gt; <code>Settings</code>를 들어가서 몇몇 설정을 해주자.</p>
+<p><figure><a class="lightgallery" href="https://blog.harrydev.io/dev/travis/settings.png" title="travis settings" data-thumbnail="/dev/travis/settings.png" data-sub-html="<h2>Travis 설정을 해주자</h2><p>travis settings</p>">
+        <img
+            class="lazyload"
+            src="https://blog.harrydev.io/svg/loading/normal.min.svg"
+            data-src="https://blog.harrydev.io/dev/travis/settings.png"
+            data-srcset="https://blog.harrydev.io/dev/travis/settings.png, https://blog.harrydev.io/dev/travis/settings.png 1.5x, https://blog.harrydev.io/dev/travis/settings.png 2x"
+            data-sizes="auto"
+            alt="travis settings" />
+    </a><figcaption class="image-caption">Travis 설정을 해주자</figcaption>
+    </figure></p>
+<ul>
+<li>General에서
+<ul>
+<li>build pushed branches를 켜서 push event가 발생하면 진행되도록 설정</li>
+</ul>
+</li>
+<li>Environment Variables에 <code>.travis.yml</code>에서 사용된 변수들을 추가해 준다
+<ul>
+<li>USERNAME, GITHUB_TOKEN, NAME, EMAIL</li>
+<li>Github token은 <a href="https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line" target="_blank" rel="noopener noreffer">이와 같은 방법</a>으로 생성 할 수 있다</li>
+</ul>
+</li>
+</ul>
+<p>이것으로 설정이 모두 끝났다.</p>
+<p>​</p>
+<p>새로운 글을 작성하고 develop branch로 올려보자.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo new posts/new_post.md
+$ vim content/posts/new_post.md
+<span class="c1"># 글을 작성하고 draft : false로 변경!</span>
+$ git add content/
+$ git commit -m <span class="s2">&#34;두번째 post&#34;</span> <span class="o">&amp;&amp;</span> git push
+</code></pre></td></tr></table>
+</div>
+</div><p><figure><a class="lightgallery" href="https://blog.harrydev.io/dev/travis/build-history-github-pages.png" title="Travis CI build history" data-thumbnail="/dev/travis/build-history-github-pages.png" data-sub-html="<h2>Travis의 빌드 히스토리</h2><p>Travis CI build history</p>">
+        <img
+            class="lazyload"
+            src="https://blog.harrydev.io/svg/loading/normal.min.svg"
+            data-src="https://blog.harrydev.io/dev/travis/build-history-github-pages.png"
+            data-srcset="https://blog.harrydev.io/dev/travis/build-history-github-pages.png, https://blog.harrydev.io/dev/travis/build-history-github-pages.png 1.5x, https://blog.harrydev.io/dev/travis/build-history-github-pages.png 2x"
+            data-sizes="auto"
+            alt="Travis CI build history" />
+    </a><figcaption class="image-caption">Travis의 빌드 히스토리</figcaption>
+    </figure></p>
+<p><figure><a class="lightgallery" href="https://blog.harrydev.io/dev/github/github-page-commit-log.png" title="Github commit log" data-thumbnail="/dev/github/github-page-commit-log.png" data-sub-html="<h2>Github 커밋 로그</h2><p>Github commit log</p>">
+        <img
+            class="lazyload"
+            src="https://blog.harrydev.io/svg/loading/normal.min.svg"
+            data-src="https://blog.harrydev.io/dev/github/github-page-commit-log.png"
+            data-srcset="https://blog.harrydev.io/dev/github/github-page-commit-log.png, https://blog.harrydev.io/dev/github/github-page-commit-log.png 1.5x, https://blog.harrydev.io/dev/github/github-page-commit-log.png 2x"
+            data-sizes="auto"
+            alt="Github commit log" />
+    </a><figcaption class="image-caption">Github 커밋 로그</figcaption>
+    </figure></p>
+<p>이제 새로운 글을 작성하고 develop에 push만 한다면 생성과 배포까지 자동으로 이루어 지게 된다.</p>
+<p>​</p>
+<p>다음번에는 Custom Domain을 붙이고 HTTPS로 서비스를 하는법을 끄적여 봐야겠다.</p>
+<p>​</p>
+<hr>
+<p>— <strong>Prev</strong> : <a href="https://blog.harrydev.io/posts/dev/2019/08/hugo_basic" rel="">[Blog Setup] 2.Hugo를 이용한 Static Page 생성</a>]</p>
+<p>— <strong>Next</strong> : TODO&hellip;</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2020-05-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="https://blog.harrydev.io/deploy-blog-to-github-pages-with-travis/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.harrydev.io/deploy-blog-to-github-pages-with-travis/" data-title="[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기." data-via="https://twitter.com/harrydev_io" data-hashtags="blog,hugo,travis,github pages"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.harrydev.io/deploy-blog-to-github-pages-with-travis/" data-hashtag="blog"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://blog.harrydev.io/deploy-blog-to-github-pages-with-travis/" data-title="[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기."><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.12.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://blog.harrydev.io/deploy-blog-to-github-pages-with-travis/" data-title="[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기."><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="Share on Trello" data-sharer="trello" data-url="https://blog.harrydev.io/deploy-blog-to-github-pages-with-travis/" data-title="[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기." data-description=""><i class="fab fa-trello fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://blog.harrydev.io/tags/blog/">blog</a>,&nbsp;<a href="https://blog.harrydev.io/tags/hugo/">hugo</a>,&nbsp;<a href="https://blog.harrydev.io/tags/travis/">travis</a>,&nbsp;<a href="https://blog.harrydev.io/tags/github-pages/">github pages</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://blog.harrydev.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="https://blog.harrydev.io/hugo_basic/" class="prev" rel="prev" title="[Blog Setup] 2.Hugo를 이용한 Static Page 생성"><i class="fas fa-angle-left fa-fw"></i>[Blog Setup] 2.Hugo를 이용한 Static Page 생성</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.70.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.8"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.harrydev.io/" target="_blank">harry</a></span>&nbsp;|&nbsp;<span class="license"> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://blog-harrydev-io.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Harry's Dev Story","id-2":"Harry's Dev Story"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="https://blog.harrydev.io/js/theme.min.js"></script></body>
+</html>
