@@ -160,12 +160,3 @@ $ ls public
 
 다음은 TravisCI로 Generate를 하고 Github Page로 블로그를 서빙할 수 있도록 설정하는 법을 끄적여 보도록 하겠다. 
 
-​    
-
-----
-
-— **Prev** : [[Blog Setup] 1.블로그를 새로 시작하며...](/posts/story/2019/07/restart_blog)
-
-— **Next** : [[Blog Setup] 3.Travis CI로 Github Pages에 Blog 배포하기.](/posts/dev/2019/08/deploy-blog-to-github-pages-with-travis)
-
-

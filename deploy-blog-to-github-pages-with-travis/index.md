@@ -194,10 +194,3 @@ $ git commit -m "두번째 post" && git push
 
 다음번에는 Custom Domain을 붙이고 HTTPS로 서비스를 하는법을 끄적여 봐야겠다.
 
-​    
-
-------
-
-— **Prev** : [[Blog Setup] 2.Hugo를 이용한 Static Page 생성](/posts/dev/2019/08/hugo_basic)]
-
-— **Next** : TODO...

@@ -84,10 +84,3 @@ env:
 
 일단 매일매일 그날 알게된 것(?) 혹은 정리를 안해두었던걸 써봐야 겠다...
 
-​    
-
-----
-
-— **Next** : [[Blog Setup] 2.Hugo를 이용한 Static Page 생성](/posts/dev/2019/08/hugo_basic)
-
-
