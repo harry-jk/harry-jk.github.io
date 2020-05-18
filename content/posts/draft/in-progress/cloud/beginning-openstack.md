@@ -16,12 +16,12 @@ tags:
 ---
 
 ## 어쩌다 보니?
-어쩌다 보니 기존에 간단한 FTP와 토이 프로젝트용 서버로 간간히 굴리고 있던 컴퓨터와 추가로 2대의 컴퓨터 자원이 남게 되면서 한번 Private Cloud를 구축해 볼까 하는 생각이 들었다.  
-컴퓨터들이 다 오래 되다 보니 사양도 높지 않고 성능은 안나오겠지만 한번 구축해보고 이리저리 살펴보는것에 의미를 두며(?) 시작해보도록 하겠다.  
+어쩌다 보니 기존에 간단한 FTP와 토이 프로젝트용 서버로 간간히 굴리고 있던 컴퓨터와 추가로 2대의 컴퓨터 자원이 남게 되면서 이전부터 한번 해 보고 싶었던 Private Cloud를 구축이 생각났다.  
+컴퓨터들이 다 오래 되다 보니 사양도 높지 않고 성능은 안나오겠지만 한번 구축 해보면서 공부도 할 겸, 구축하고 운용 해보면서 이리저리 살펴보는것에 의미를 두며(?) 시작 해보도록 하겠다.  
 
 
 ## OpenStack?
-OpenStack은 1대 이상의 컴퓨터의 가상화된 리소스 풀을 가지고 Iaas(Infrastructure As A Service)를 구축 할 수 있게 도외주는 **`오픈소스 클라우드 컴퓨팅 플랫폼`**이다.  
+`OpenStack`은 1대 이상의 컴퓨터의 가상화된 리소스 풀을 가지고 Iaas(Infrastructure As A Service)를 구축 할 수 있게 도외주는 **`오픈소스 클라우드 컴퓨팅 프로젝트`**이다.  
 클라우드 컴퓨팅 플랫폼에 맞게 여러가지 서비스가 있는데 주요하게 사용되는 `컴퓨팅(Nova)`, `스토리지(Swift)`, `네트워킹(Neutron)` 그 외에도 각종 서비스가 존재한다.  
 기본적으로 모든 서비스의 인증은 `Identity 서비스(Keystone)`를 통하여 이루어 지며 각 개별 서비스는 API를 통하여 상호 작용한다.  
 OpenStack의 각 서비스는 [`여기서`](https://www.openstack.org/software/project-navigator/openstack-components#openstack-services)확인이 가능하며 필요에 따라 설치하여 구성할 수 있다.  
@@ -32,8 +32,9 @@ OpenStack의 [Install Guide](https://docs.openstack.org/install-guide/overview.h
 - OpenStack의 각 서비스에 필요한 인증, 이미지, 리소스 관리, 대시보드 등 management를 위한 서비스들을 설치하기 위한 controller node
 - KVM과 같은 hypervisor를 실행하여 가상화 환경을 만들고 vm instance를 생성하게될 compute node
 
+\
 꼭 이대로 구성 할 필요는 없으며 1대에 전부 설치해서 구성해도 되고 여러대에 각 서비스를 원하는 대로 구성을 하면 된다.  
-만약 1대에 기본적인 구성만 하고자 한다면 [DevStack](https://docs.openstack.org/devstack/latest/)을 이용하면 아주 손쉽게 설치가 가능하다.  
+만약 `단일 Node`에 기본적인 구성만 하고자 한다면 [DevStack](https://docs.openstack.org/devstack/latest/)을 이용하면 아주 손쉽게 설치가 가능하다.  
 
 \
 위의 가이드를 따라서 하나씩 살펴보면, 기본적으로 아래의 항목이 설치가 되어 있어야 한다.  
@@ -92,7 +93,7 @@ OpenStack의 [Install Guide](https://docs.openstack.org/install-guide/overview.h
   - Storage: 1TB(HDD), 2TB(HDD)
   - NIC: 2
 
-전부 5~10이 넘은 컴퓨터들이라 사양이 그렇게 좋지는 않다.  
+모든 노드는 `Ubuntu Server 18.04 LTS`를 사용하고, 전부 `5~10이 넘은` 컴퓨터들이라 사양이 그렇게 좋지는 않다.  
 
 \
 각 노드에는 다음과 같이 서비스를 구성해 보도록 할 계획이다.  
@@ -107,5 +108,17 @@ OpenStack의 [Install Guide](https://docs.openstack.org/install-guide/overview.h
   - Swift
 
 \
-성능 순서대로 컴퓨팅을 위한 Node, Control을 위한 Node로 나누었으며, 남은 Node를 스토리지 Node로 일단 정리하였다.  
-이번 글에서는 대략적인 OpenStack 구성과 어떻게 구성할 것인지를 보았고, 다음 글부터는 차근차근 서비스 하나씩 올려 보도록 하겠다.
+성능 순서대로 `Compute Node`, `Controller Node`로 나누었으며, 남은 Node를 `Storage Node`로 일단 정리하였다.  
+이번 글에서는 대략적인 OpenStack 구성과 어떻게 구성할 것인지를 보았고, 다음 글부터는 차근차근 서비스 하나씩 올려 보도록 하겠다.  
+
+\
+만약 따라서 해보실 분이 있다면, 주변에 굴러다니는 컴퓨터 혹은 가상화 환경 위에서도 충분히 가능하니 시도 해보는것도 추천한다.  
+반드시 위와 같은 구성이 아니더라도 각 서비스를 적절하게 구성하기만 하면 된다.  
+
+
+{{< admonition type=tip title="참고 자료" open=false >}}
+- [OpenStack Components | OpenStack](https://www.openstack.org/software/project-navigator/openstack-components)  
+- [OpenStack Install Guide | OpenStack](https://docs.openstack.org/install-guide/index.html)
+- [오픈스택(OpenStack) 이란? | Popit](https://www.popit.kr/%EC%98%A4%ED%94%88%EC%8A%A4%ED%83%9D-openstack-%EC%9D%B4%EB%9E%80/)
+- [OepnStack | RedHat](https://www.redhat.com/ko/topics/openstack)
+{{< /admonition >}}
