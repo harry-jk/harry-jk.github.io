@@ -2,7 +2,8 @@
 title: "[OpenStack기반 Private Cloud 구축기] 1. 어쩌다 OpenStack"
 date: 2020-05-17T19:07:56+09:00
 draft: true
-toc: true
+toc: 
+  auto: false
 images:
 categories:
   - Cloud
