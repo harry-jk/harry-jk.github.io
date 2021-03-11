@@ -68,7 +68,6 @@ preserveTaxonomyNames = true
     languageName    = "Korean"
     hasCJKLanguage  = true
     paginate        = 10
-    googleAnalytics = "UA-38928641-2"
 
     title     = "Harry's Dev Story"
     copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." 
@@ -472,10 +471,10 @@ preserveTaxonomyNames = true
 
   # Analytics config
   [params.analytics]
-    enable = false
+    enable = true
     # Google Analytics
     [params.analytics.google]
-      id = ""
+      id = "UA-38928641-2"
       # whether to anonymize IP
       anonymizeIP = true
     # Fathom Analytics
