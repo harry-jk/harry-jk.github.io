@@ -19,7 +19,7 @@ tags:
 
 ​    
 
-이전에는 Naver Blog를 지나 [Tistory](https://blog.skyserv.kr)에서 몇개의 글을 적고..  
+이전에는 Naver Blog를 지나 [Tistory](https://skyserv.tistory.com)에서 몇개의 글을 적고..  
 
 GitHub Page로 넘어와 Jekyll를 TravisCI를 이용하여 사용하고 있었다. ~~글은 하나밖에 없었지만..~~
 
