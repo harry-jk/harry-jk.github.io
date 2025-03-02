@@ -17,8 +17,8 @@ enableEmoji = true
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 [taxonomies]
-    categories = "categories"
-    tags = "tags"
+    category = "categories"
+    tag = "tags"
     series = "series"
 
 # Author config
