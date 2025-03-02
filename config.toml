@@ -16,6 +16,11 @@ enableEmoji = true
 # ignore some build errors
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
+[taxonomies]
+    categories = "categories"
+    tags = "tags"
+    series = "series"
+
 # Author config
 [params.author]
     name = "harry"
