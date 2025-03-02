@@ -594,14 +594,12 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 [markup]
     # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
     [markup.highlight]
-        anchorLineNos = false
         codeFences = true
-        style = "monokai"
-        guessSyntax = false
+        guessSyntax = true
         lineNos = true
+        anchorLineNos = true
         lineNumbersInTable = true
-        noClasses = true
-        tabWidth = 4
+        noClasses = false
     # Goldmark is from Hugo 0.60 the default library used for Markdown
     [markup.goldmark]
         [markup.goldmark.extensions]

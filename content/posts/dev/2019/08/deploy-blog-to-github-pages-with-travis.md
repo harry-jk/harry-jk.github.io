@@ -16,11 +16,10 @@ tags:
   - github pages
 ---
 
-[지난 글에서](/posts/dev/2019/08/hugo_basic) Hugo로 Static Page를 생성해 보았다.
-
+[지난 글에서](/posts/dev/2019/08/hugo_basic) Hugo로 Static Page를 생성해 보았다.  
 이제 다른 사람이 볼 수 있도록 웹에 서비스를 배포할 차례이다
 
-​    
+<br/>
 
 이를 위해서는 다양한 방법이 존재 하며 원하는 방식으로 선택을 하면 된다.
 
@@ -33,17 +32,15 @@ tags:
 - `Github Pages`를 이용하여 서비스
 - 그 외...
 
-그 중 비용 생각 안해도 되고 Custom Domain연동에 HTTPS도 지원하는 Github Pages를 사용하도록 하겠다.
-
+그 중 비용 생각 안해도 되고 Custom Domain연동에 HTTPS도 지원하는 Github Pages를 사용하도록 하겠다.  
 (물론 다른 서비스들도 이 블로그 처럼 트래픽도 없고 사이즈도 작다면 대부분 무료 플렌으로 충분히 커버가 가능하다.)
 
-​    
+<br/>
 
-어느 서비스를 통하여 블로그를 올릴지 정했으면, 이제 올려 보도록 하자.
-
+어느 서비스를 통하여 블로그를 올릴지 정했으면, 이제 올려 보도록 하자.  
 `Github Pages`는 간단히 자신의 `Github`에 `{자신의 username}.github.io`로 `repository`를 생성하면 준비가 끝난다.
 
-​    
+<br/>
 
 이제 해당 repository에 배포를 해보자
 
@@ -58,25 +55,24 @@ $ cp -R ../my_blog/public/* ./
 $ git add . && git commit -m "my first blog" && git push
 ```
 
-이제 `http://{username}.github.io/`로 접속하면 올라간 것을 확인 할 수 있을 것이다.
+<br/>
 
-​    
-
-하지만 매번 이렇게 수동으로 생성하고 배포 할 것인가.
-
+이제 `http://{username}.github.io/`로 접속하면 올라간 것을 확인 할 수 있을 것이다.  
+하지만 매번 이렇게 수동으로 생성하고 배포 할 것인가.  
 그냥 글을 쓰고 올리면 생성하고 배포까지 하도록 `Travis CI`를 이용하여 설정해 보자.
 
-​    
+<br/>
 
-먼저 시작하기 전에 어떠한 방법으로 구성을 할 것인지 간단하게 알아보자.
-
+먼저 시작하기 전에 어떠한 방법으로 구성을 할 것인지 간단하게 알아보자.  
 Github Pages는 몇가지 static page를 서비스 하기 위한 방법을 제공한다.  
 
 - `{username}.github.io`로 생성된 repository에서는 `master` branch
 - `그 외`의 repository에서는 설정에 따라 `master` or `gh-pages` branch
   - master branch의 `/docs` 폴더로도 설정이 가능하다고 한다. 
 
-나는 `{username}.github.io`를 사용할 예정이므로 해당 repository의 `develop` branch에 hugo project를 올리고 `push`가 되면 Travis CI에서 static page generate를 시행한 뒤 `master` branch에 commit을 하여  `deploy`되도록 구성 할 것이다.
+<br/>
+
+저는 `{username}.github.io`를 사용할 예정이므로 해당 repository의 `develop` branch에 hugo project를 올리고 `push`가 되면 Travis CI에서 static page generate를 시행한 뒤 `master` branch에 commit을 하여  `deploy`되도록 구성 할 것이다.
 
 ```bash
 # develop branch로 변경해준다.
@@ -89,10 +85,9 @@ $ git add .
 $ git commit -m "hugo project init" && git push
 ```
 
-​    
+<br/>    
 
-프로젝트를 repository에 올려두었으니 이제 Travis 설정을 할 차례이다.
-
+프로젝트를 repository에 올려두었으니 이제 Travis 설정을 할 차례이다.  
 Travis는 `.travis.yml`로 어떤 작업을 수행 할 것인지를 정의할 수 있다.
 
 ````yaml
@@ -144,13 +139,11 @@ deploy:
   name: $NAME
 ````
 
-아주 간단하게 이와 같이 정의가 된다.
-
-**여기서 나온 환경변수는 Travis CI 사이트에서 설정하는 값이니 넣지 않는다.**
-
+아주 간단하게 이와 같이 정의가 된다.  
+**여기서 나온 환경변수는 Travis CI 사이트에서 설정하는 값이니 넣지 않는다.**  
 특히 **GITHUB_TOKEN**은 절대로 코드상에 넣지 않는다.
 
-​    
+<br/>
 
 `.travis.yml`을 추가 하였으면 commit/push를 해준다.
 
@@ -159,21 +152,17 @@ $ git add .travis.yml
 $ git commit -m "travis init" && git push
 ```
 
-​        
+<br/><br/>
 
-​    
-
-이제 [Travis CI](https://travis-ci.org/)를 들어가 Github으로 로그인을 해주자.
-
-로그인을 하면 public repository목록이 나오고 그 중에 `{username}.github.io` repository를 선택해서 들어간다.
-
+이제 [Travis CI](https://travis-ci.org/)를 들어가 Github으로 로그인을 해주자.  
+로그인을 하면 public repository목록이 나오고 그 중에 `{username}.github.io` repository를 선택해서 들어간다.  
 (만일 나오지 않는다면 https://travis-ci.org/{username}/{username}.github.io 로 들어갈 수 있다)
 
 ![not an active repository](/dev/travis/not-an-active-repository.png "아직 활성화가 안되어 있다.")
 
 `Activate repotository`를 눌러 활성화를 해주자!
 
-​    
+<br/>
 
 활성화가 되었다면 `More Options` > `Settings`를 들어가서 몇몇 설정을 해주자.
 
@@ -187,7 +176,7 @@ $ git commit -m "travis init" && git push
 
 이것으로 설정이 모두 끝났다.
 
-​    
+<br/>
 
 새로운 글을 작성하고 develop branch로 올려보자.
 
@@ -199,12 +188,14 @@ $ git add content/
 $ git commit -m "두번째 post" && git push
 ```
 
+<br/>
+
 ![Travis CI build history](/dev/travis/build-history-github-pages.png "Travis의 빌드 히스토리")
 
 ![Github commit log](/dev/github/github-page-commit-log.png "Github 커밋 로그")
 
 이제 새로운 글을 작성하고 develop에 push만 한다면 생성과 배포까지 자동으로 이루어 지게 된다.  
 
-​    
+<br/>
 
 다음번에는 Custom Domain을 붙이고 HTTPS로 서비스를 하는법을 끄적여 봐야겠다.
