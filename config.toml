@@ -5,8 +5,7 @@ title = "Harry's Dev Story"
 copyright = "©2019 - 2025 harrydev.io. Licensed under CC-BY-NC-SA 4.0"
 
 defaultContentLanguage = "ko"
-languageCode = "ko"
-languageName = "Korean"
+locale = "ko"
 hasCJKLanguage = true
 
 enableRobotsTXT = true
@@ -88,14 +87,14 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 [languages]
     [languages.ko]
         weight = 1
-        languageCode = "ko"
-        languageName = "Korean"
+        locale = "ko"
+        label = "Korean"
         hasCJKLanguage = true
         copyright = "© 2025 harrydev.io. Licensed under CC-BY-NC-SA 4.0"
     [languages.en]
         weight = 2
-        languageCode = "en"
-        languageName = "English"
+        locale = "en"
+        label = "English"
         hasCJKLanguage = true
         copyright = "© 2025 harrydev.io. Licensed under CC-BY-NC-SA 4.0"
 
@@ -623,7 +622,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Permalinks config (https://gohugo.io/content-management/urls/#permalinks)
 [permalinks]
-     posts = ":year/:month/:filename"
+     posts = ":year/:month/:contentbasename"
 
 # Privacy config (https://gohugo.io/about/hugo-and-gdpr/)
 [privacy]
